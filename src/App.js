@@ -1,26 +1,32 @@
 import React from 'react';
-import logo from './logo.svg';
+import data from './data';
 import './App.css';
 
+import PageContainer from './components/PageContainer';
+import Stream from './components/Stream';
+import SingleDay from './components/SingleDay';
+
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	const currentTime = new Date();
+
+	return (
+		<PageContainer>
+			<p>{currentTime.getHours()}:{currentTime.getMinutes()}</p>
+			<p>todays time stamp{currentTime.getTime()}</p>
+			{data.map((day, key) =>
+				<>
+				<p>the time stamp{new Date(day.date).getTime()}</p>
+				{new Date(day.date).getTime() >= currentTime.getTime() &&
+					<SingleDay date={day.date} key={key}>
+						{day.streams.map((stream, key) =>
+							<Stream key={key} stream={stream} />
+						)}
+					</SingleDay>
+				}
+				</>
+			)}
+		</PageContainer>
+	);
 }
 
 export default App;
