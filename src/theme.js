@@ -1,21 +1,12 @@
 export const colour = {
-    black: '12, 24, 19',
-    white: '255, 255, 255',
-    grey: '232, 229, 229',
-    grey_light: '246, 246, 246',
-    grey_dark: '111, 109, 109',
-
-    green: '0, 66, 37',
-    green_light: '192, 237, 217',
-    green_dark: '23, 40, 32',
-
-    blue: '3, 29, 69',
-    blue_light: '193, 214, 245',
-    blue_dark: '26, 32, 41',
-
-    pink: '240, 197, 200',
-    pink_light: '255, 230, 231',
-    pink_dark: '149, 101, 104'
+    black: '#170710',
+    white: '#FFFFFF',
+    off_white: '#FFFCF9',
+    grey: '#F5F5F5',
+    grey_dark: '#B5B1B2',
+    primary: '#B1EDE8',
+    focus: '#EDB1D4',
+    error: '#EDB1B6'
 };
 
 export const font = {
